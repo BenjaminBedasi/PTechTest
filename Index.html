@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradox Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e16f25f3af.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600&family=Nunito+Sans:wght@400;600&family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&family=Exo+2:wght@400;700&family=Oswald:wght@400;700&family=Raleway:wght@400;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body onload="toggleBurgNav()">
+    <nav class="nav1">
+        <div class="logo" style="max-width: 25%;">
+            <img src="/Images/Logo.jpg" alt="Logo">
+            <span class="logo-text">Paradox Technology</span>
+        </div>
+        <div class="nav-items-left" style="max-width: 50%;left: 0;">
+            <a href="#sec1" id="s1">Zeno</a>
+            <a href="#sec2" id="s2">Features</a>
+            <a href="#sec3" id="s3">Solutions</a>
+        </div>
+        <div class="nav-items-right">
+            <a href="#sec4" id="s4">About</a>
+            <a href="#sec5" id="s5">Contact</a>
+        </div>
+    </nav>
+
+    <nav class="BurgNav" onclick="toggleBurgNav()">
+        <div class="logo" style="max-width: 25%;">
+            <img src="/Images/Logo.jpg" alt="Logo" class="BurgNavLogo"> <h3>Paradox Technology</h3>
+        </div>
+        <div id="BurgLinks">
+            <a href="#sec1" id="s1">Zeno</a>
+            <a href="#sec2" id="s2">Features</a>
+            <a href="#sec3" id="s3">Solutions</a>
+            <a href="#sec4" id="s4" >About</a>
+            <a href="#"onclick="OpenPop()">Contact</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="" style="padding: 50px;">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>    
+
+    <div class="scroll-bar-wrapper">
+        <div class="scroll-bar">
+            <div class="circle" id="circle1"></div>
+            <div class="circle" id="circle2"></div>
+            <div class="circle" id="circle3"></div>
+            <div class="circle" id="circle4"></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section1" id="sec1" style="margin-bottom: 10px;">
+            
+            <div class="video-container">
+                <video autoplay loop muted playsinline>
+                    <source src="ZenoVideoSpdUp.mp4" type="video/mp4">
+                    <!-- Add more source elements for other video formats if needed -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="Vtext-overlay">
+                    <!-- <h2>Section 1</h2>
+                    <p>This is the first section with a video overlay.</p> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section2" id="sec2" style="margin-bottom: 10px;width:100%;">
+            <div class="slideshow-container">
+                <div class="slides">
+                    <div class="slide" style="background-image: url('/Images/ImgSales2.jpg');">
+                        <div class="text-overlay">
+                            <h2>Sales Module</h2>
+                            <p>Easily manage Purchase Orders, Sales Orders, Invoices, etc.</p>
+                            <!-- <button class="sldButton">Learn More</button> -->
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('/Images/ImgInventoryMan.jpg');">
+                        <div class="text-overlay">
+                            <h2>Inventory Purchaing Module</h2>
+                            <p>Stock transfer, tracking, etc. made easy with ZENO.</p>
+                            <!-- <button class="sldButton">Learn More</button> -->
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('/Images/ImgTransLog.jpg');">
+                        <div class="text-overlay">
+                            <h2>Transportation Logistics Module</h2>
+                            <p>Accurately plan and track of your trips</p>
+                            <!-- <button class="sldButton">Learn More</button> -->
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('/Images/ImgManufact.jpg');">
+                        <div class="text-overlay">
+                            <h2>Manufacturing Module</h2>
+                            <p>Bill of Material Tracking, movement of stock, stock-take, etc.</p>
+                            <!-- <button class="sldButton">Learn More</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3" id="sec3" style="margin-bottom: 10px;">
+            <div class="container"><div class="text_hide"></div><h2 class="text">Industrial Solutions</h2> <div class="text_cursor"></div></div>
+            <div class="MobileHeading"><h2>Industrial Solutions</h2></div>
+            <div class="container-wrapper">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/Images/ImgAutomotive.jpg" alt="Container 1"
+                                style="margin-left: 5px; margin-left: 5px;">
+                            <h3>Automotive</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div style="text-align: left; margin:4px;">
+                                <h3>Automotive</h3>
+                                <p style="top:0;">Our advanced software solution revolutionizes the automotive industry
+                                    by automating processes, reducing manual errors, and boosting productivity.
+                                    Experience streamlined inventory management, enhanced customer engagement, and
+                                    data-driven insights for informed decision-making, empowering your company to thrive
+                                    in a competitive market.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/Images/ImgRetail.jpg" alt="Container 2">
+                            <h3>Retail</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div style="text-align: left; margin:4px;">
+                                <h3>Retail</h3>
+                                <p>Our innovative software transforms retail operations, streamlining inventory
+                                    management, and optimizing sales processes. Benefit from improved customer
+                                    engagement, real-time analytics, and seamless integration for a more efficient and
+                                    profitable retail experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/Images/Distribution.jpg" alt="Container 3">
+                            <h3>Distribution</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div style="text-align: left; margin:4px;">
+                                <h3>Distribution</h3>
+                                <p>Our cutting-edge software empowers distribution companies with enhanced supply chain
+                                    visibility, streamlined logistics, and efficient inventory management. Experience
+                                    optimized operations, reduced costs, and improved customer satisfaction, making your
+                                    distribution business a competitive force in the market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/Images/ImgManufact.jpg" alt="Container 4">
+                            <h3>Manufacturing</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div style="text-align: left; margin:4px;">
+                                <h3>Manufacturing</h3>
+                                <p>Our advanced software solution revolutionizes manufacturing processes with automated
+                                    workflows, real-time production monitoring, and streamlined inventory control.
+                                    Increase productivity, reduce downtime, and achieve higher product quality,
+                                    empowering your manufacturing company to thrive in a dynamic market.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 5%;">
+
+        </div>
+
+        <div class="section 4" id="sec4">
+            <div class="GlobalHeading"><h2>About US</h2></div>
+            <div class="s4-content-container">
+                <div class="s4-text">
+                    <p>We are Paradox Technology, a trailblazer in the realm of software development with a legacy spanning over two decades. With an unwavering commitment to innovation and a prowess that is truly cutting edge, we specialize in crafting bespoke solutions tailored to the intricate needs of industrial and governmental organizations. Our journey has been defined by the art of transformation, seamlessly weaving technology into the fabric of industries that shape our world</p>
+                    <p>At Paradox Technology, we pride ourselves on harnessing our 20 years of experience to sculpt software solutions that transcend boundaries. Our expertise finds its canvas in diverse sectors, from the intricate tapestry of the automotive industry to the dynamic world of retail distribution and the precision-driven realm of manufacturing. We've navigated these domains with a keen understanding of their nuances, crafting solutions that redefine efficiency and drive progress.</p>
+                    <p>Central to our success is our flagship system, Zeno. More than a mere software, Zeno is a testament to our dedication to high-tech excellence. It serves as the heartbeat of modernization, orchestrating operations with unparalleled finesse. Yet, our vision doesn't end with Zeno; it evolves with every challenge we tackle, each solution we engineer.</p>
+                    <p>Our journey into the realm of integration has revolutionized connectivity itself. We've pioneered integration software that forms the bridge between Zeno and our clients' systems. This harmonious synergy allows for an unprecedented exchange of data, creating a harmonized ecosystem where technology propels progress.</p>
+                    <p>Join us as we transcend convention, defying the ordinary and embracing the extraordinary. Paradox Technology stands as a beacon of innovation, where technology converges with creativity, and the future is not just imagined, but realized.</p>
+                </div>
+                <div class="s4-image">
+                    <img src="/Images/ImgTeam.jpeg" alt="About Us Image">
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 10%;">
+
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-content">
+            <div class="CloseBtnContainer">
+                <div class="close" onclick="ClosePop()" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+            </div>
+                <div class="section5" id="sec5">
+                    <div class="contact-form-container">
+                        <div class="contact-form-left">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc">CC</label>
+                                <input type="email" id="cc" name="cc">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <button type="submit" class="sldButton">Send</button>
+                        </div>
+                        <div class="contact-form-right">
+                            <textarea id="message" name="message" rows="6" placeholder="Your message here..."
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-form-containerMobile">
+                        <div class="contact-form-left">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc">CC</label>
+                                <input type="email" id="cc" name="cc">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Type Message Here</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Your message here..."required></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="sldButton">Send</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        
+
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Paradox Technology. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i title="Facebook" class="fa-brands fa-facebook" style="color: white;"></i></a>
+                <a href="#"><i title="Instagram" class="fa-brands fa-instagram" style="color: white;"></i></a>
+                <a href="#"><i title="Twitter" class="fa-brands fa-twitter" style="color: white;"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

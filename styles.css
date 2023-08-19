@@ -1,0 +1,991 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    scrollbar-width: none;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    /* Use fallback fonts like Arial, sans-serif in case the Google Font fails to load */
+}
+
+p,
+li {
+    font-family: 'Roboto', Arial, sans-serif;
+    /* Use fallback fonts like Arial, sans-serif in case the Google Font fails to load */
+}
+
+body.dark-mode {
+    /* Styles for the dark mode */
+    background-color: #fff;
+    color: black;
+}
+
+/* Hide the standard scrollbar */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Optional: Customize scrollbar appearance for Chrome-based browsers */
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* You can set a background color if needed */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+nav {
+    background-color: black;
+    opacity: 0.8;
+    top: 0;
+    position: sticky;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em;
+    z-index: 1000;
+    text-shadow: 0 0 1em rgba(255, 255, 255, 0.8);
+    animation: glow 2s ease-in-out infinite;
+}
+
+nav.dark-mode {
+    background-color: #fff;
+    top: 0;
+    position: sticky;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.logo img {
+    height: 3.75em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1em;
+    visibility: hidden;
+    /* Hide the text without affecting the layout */
+    overflow: hidden;
+    /* Hide any overflowing characters */
+    white-space: nowrap;
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        /* Start with no width (hidden) */
+    }
+
+    to {
+        width: 100%;
+        /* Gradually reveal the entire width (show all characters) */
+    }
+}
+
+
+nav .nav-items-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 10%;
+}
+
+nav .nav-items-left a,
+nav .nav-items-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.625em;
+    position: relative;
+    display: inline-block;
+}
+
+nav .nav-items-left a::before,
+nav .nav-items-right a::before {
+    content: '';
+    position: absolute;
+    bottom: -0.125em;
+    left: 50%;
+    width: 0;
+    height: 0.125em;
+    background-color: rgb(131, 216, 231);
+    transition: width 0.3s ease, left 0.3s ease, box-shadow 0.3s ease;
+    /* Add box-shadow to the transition */
+}
+
+nav .nav-items-left a:hover::before,
+nav .nav-items-right a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing 1.5s infinite;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 0.3125em 0.125em rgba(131, 216, 231, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 0.625em 0.125em rgba(131, 216, 231, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 0.3125em 0.125 rgba(131, 216, 231, 0.8);
+    }
+}
+
+.scroll-bar-wrapper {
+    position: fixed;
+    top: 30%;
+    right: 0.625em;
+    display: flex;
+    align-items: center;
+}
+
+.typewriter h3 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(131, 216, 231, 0.8);
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgba(131, 216, 231, 0.8);
+    }
+}
+
+.scroll-bar {
+    padding: 5px;
+    background-color: #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10px;
+    /* clip-path: polygon(50% 10%, 100% 30%, 100% 70%, 50% 90%, 0% 70%, 0% 30%); */
+    background-color: #333;
+    height: 200px;
+    width: 10px;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+    border-radius: 5px;
+}
+
+
+
+@keyframes glowing-bar {
+    0% {
+        box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 10px rgba(131, 216, 231, 0.8), inset 0 0 10px rgba(131, 216, 231, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    }
+}
+.CloseBtn{
+    text-align: right;
+}
+.CloseBtn:hover{
+    cursor: pointer;
+}
+.CloseBtnContainer{
+    right:0;top:0;margin-left:95%;
+}
+
+.close {
+    --size: 60px;
+    --borderSize: 2px;
+    --borderColor: rgba(255, 255, 255, 1);
+    --speed: 0.5s;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    border-radius: 50%;
+    /* box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.5); */
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+    animation: fade-in var(--speed) ease-out 0.25s both;
+  }
+  
+  .close .circle path {
+    stroke: var(--borderColor);
+    fill: none;
+    stroke-width: calc(var(--borderSize) / 2);
+    stroke-linecap: round;
+    animation: progress var(--speed) ease-out 0.25s both;
+  }
+  
+  .close span {
+    display: block;
+    width: calc((var(--size) / 4) - 5px);
+    height: var(--borderSize);
+    background: var(--borderColor);
+    box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    position: absolute;
+    --padding: calc(var(--size) / 3);
+    transition: 0.25s ease-in-out;
+    animation: slide-in var(--speed) ease-in-out 0.25s both;
+  }
+  
+  .close span:nth-child(1) {
+    top: calc(var(--padding) - (var(--borderSize) / 4));
+    left: var(--padding);
+    transform: rotate(45deg);
+    transform-origin: top left;
+  }
+  
+  .close span:nth-child(2) {
+    top: calc(var(--padding) - (var(--borderSize) / 4));
+    right: var(--padding);
+    transform: rotate(-45deg);
+    transform-origin: top right;
+  }
+  
+  .close span:nth-child(3) {
+    bottom: calc(var(--padding) - (var(--borderSize) / 4));
+    left: var(--padding);
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+  
+  .close span:nth-child(4) {
+    bottom: calc(var(--padding) - (var(--borderSize) / 4));
+    right: var(--padding);
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+  }
+  
+  .close:hover {
+    /* background: #00000000; */
+  }
+  
+  .close:hover span {
+    width: calc(var(--size) / 4);
+  }
+  
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    z-index: 1000;
+
+}
+
+.popup-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:  rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+    width:75%;
+}
+
+.circle {
+    top: 60%;
+    margin-top: 30px;
+    /* Adjust the negative margin to center the diamond */
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    /* Rotate the circle to form a diamond shape */
+    margin-bottom: 10px;
+}
+
+.activeC {
+    background-color: rgba(131, 216, 231);
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing 1.5s infinite;
+}
+
+.main-content {
+    min-height: calc(100vh - 80px);
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    z-index: -1;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    margin-left: 10%;
+    ;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjust the opacity as needed */
+    padding: 20px;
+}
+.Vtext-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjust the opacity as needed */
+    padding: 20px;
+}
+
+@keyframes TextGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.text-overlay h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Add the underline style for the active link */
+.nav-items-left a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(131, 216, 231);
+    transition: width 0.3s ease;
+    animation: glowing-bar 1.5s infinite;
+}
+
+.nav-items-right a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(131, 216, 231);
+    transition: width 0.3s ease;
+}
+
+/* Remove the cursor effect for the active link */
+.nav-items-left a.active::before {
+    content: none;
+}
+
+/* Apply the glowing effect on hover */
+.nav-items-left a:hover::after {
+    width: 0;
+    /* Hide the underline on hover */
+}
+
+/* Additional styles for the slide show */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    margin-top: 5%;
+    height: 80%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    /* Adjust this value based on the number of slides */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Add this line to make positioning relative */
+}
+
+/* Additional styles for the slide show */
+.slideshow-container {
+    position: relative;
+    width:100%;
+    margin-top: 5%;
+    height: 80%;
+    overflow: hidden;
+    /* z-index: -1; */
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    /* Adjust this value based on the number of slides */
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    /* Adjust this value based on the number of slides */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Add this line to make positioning relative */
+}
+
+.sldButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+}
+
+.sldButton:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+
+}
+
+/* Section 3 containers */
+/* Add this CSS to your styles.css file or in a <style> tag in the head of your HTML document */
+
+/* Flip Card */
+.flip-card {
+    width: 25em;
+    /* Set your desired container width */
+    height: 21.875em;
+    /* Set your desired container height */
+    margin: 10px;
+    padding: 15px;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.IndustAppCon {
+    width: 100%;
+}
+
+/* Front side of the card */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Add this to create space between image and title */
+    align-items: center;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+    border-radius: 5px;
+}
+
+.flip-card-front img,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-front img {
+    margin-top: 5px;
+    max-width: 95%;
+    max-height: 90%;
+}
+
+.flip-card-front h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Add a background to the title */
+    color: white;
+    font-size: 18px;
+}
+
+.flip-card-back {
+    background-color: #000000;
+    transform: rotateY(180deg);
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+}
+
+/* Display images side by side */
+.container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+#sec3 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+
+/* Additional CSS styles for the contact form */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.contact-form-left {
+    width: 50%;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    box-sizing: border-box;
+    /* margin-left: 30%; */
+    margin-bottom: 10%;
+    text-align: left;;
+}
+
+.contact-form-left .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.contact-form-left label {
+    font-weight: 600;
+}
+
+.contact-form-left input[type="email"],
+.contact-form-left input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-left button {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+}
+
+
+
+.contact-form-left button:hover {
+    box-shadow: 0 0 5px rgba(131, 216, 231, 0.8), inset 0 0 5px rgba(131, 216, 231, 0.8);
+    animation: glowing-bar 1.5s infinite;
+}
+
+.contact-form-right {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-form-right textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Adjusting form layout for mobile devices */
+@media (max-width: 768px) {
+    .contact-form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-left,
+    .contact-form-right {
+        width: 100%;
+        border: none;
+    }
+
+    .contact-form-right {
+        margin-top: 20px;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.text {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.text_hide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+.text_cursor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    border-left: 1px solid rgb(255, 255, 255);
+}
+
+.section1 {
+    height: 100vh;
+    width: 100vw;
+}
+
+.section2 {
+    height: 100vh;
+    width: 100vw;
+}
+
+.section3 {
+    /* Adjust the height as needed */
+    height: auto; /* Reduced height to create separation */
+    padding-bottom: 50px; /* Add padding at the bottom for separation */
+    width: 100vw;
+}
+
+.section4 {
+    /* Add margin-top to create additional separation */
+    margin-top: 50px;
+}
+
+.BurgNav a {
+    color: white;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.BurgNav {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    z-index: 100;
+}
+
+/* Style the hamburger menu */
+.BurgNav a.icon {
+    /* background: black; */
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.contact-form-containerMobile{
+    display: none;
+}
+
+.MobileHeading{
+    display: none;
+}
+
+.GlobalHeading{
+    display: block;
+    animation: glowingText 1.5s infinite;
+    text-align: left;
+    margin-left: 4%;
+}
+@keyframes glowingText {
+    0% {
+      text-shadow: 0 0 10px rgba(131, 216, 231, 0.692), 0 0 20px rgba(131, 216, 231, 0.8), 0 0 30px rgba(131, 216, 231, 0.8);
+    }
+    50% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(131, 216, 231, 0.8), 0 0 20px rgba(131, 216, 231, 0.8), 0 0 30px rgba(131, 216, 231, 0.8);
+    }
+  }
+
+.s4-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.s4-text {
+    margin-left: 4%;
+    flex: 1;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.s4-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-right:4%;
+}
+.s4-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .nav1 {
+        display: none;
+    }
+    .CloseBtnContainer{
+        right:0;top:0;margin-left:85%;
+    }
+    .popup-content{
+        padding: 10px;
+    }
+    .BurgNav {
+        display: block;
+        opacity: 1;
+    }
+    #BurgLinks{
+        display: none;
+    }
+    #sec3 h2{
+        text-align: center;
+        width:100%;
+    }
+    .section1 {
+        height: 200px;
+    }
+
+    .video-container {
+        top:0;
+        height: 500px;
+    }
+    .Vtext-overlay{
+        display: none;
+    }
+    .MobileHeading{
+        display: block;
+        animation: glowingText 1.5s infinite;
+        text-align: center;
+    }
+    
+    .section2 {
+        top: 0%;
+        margin-bottom: 0px;
+    }
+    .scroll-bar-wrapper{
+        display: none;
+    }
+    .BurgNavLogo{
+        width: 80px;
+        height: 40px;
+    }
+    .section4 {
+        margin-top: 10%;
+    }
+    .contact-form-right{
+        margin-left:25%;
+    }
+    .container {
+        position: relative;
+        width: 100%;
+        font-size: 10px;
+        display: None;
+    }
+    .contact-form-container{
+        display: none;
+    }
+    .contact-form-containerMobile{
+        display: block;
+    }
+    .contact-form-left{
+        margin-left: 0%;;
+    }
+    .sldButton{
+        margin-top: 20px;
+    }
+    .s4-content-container {
+        flex-direction: column;
+    }
+    .s4-text, .s4-image {
+        flex: none;
+        width: 100%;
+    }
+}
